@@ -1,3 +1,5 @@
-# workflo - social something something
+## Rails application with devise and omniauth (Github)
 
-- Webapp to publish and share workflows of your projects.
+This is a stack of rails application that contains devise (user authentication gem), omniauth (handling oauth with external providers) with github authentication service.
+
+Just clone, edit your github-app key/secret on config/initializers/devise.rb and  fire up. Have fun
