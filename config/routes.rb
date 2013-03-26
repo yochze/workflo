@@ -1,4 +1,12 @@
 Workflo::Application.routes.draw do
+
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  match '/users/auth/:provider/callback' => 'users/omniauth_callbacks#github'
+  match '/users/auth/failure' => 'users/omniauth_callbacks#failure'
+end
+
+  # devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
