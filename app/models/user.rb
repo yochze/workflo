@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   attr_accessible :github_uid
 
   # attr_accessible :title, :body
+  has_many :projects, through: :members
+  has_many :members
 
 def self.create_from_omniauth(omniauth)
   User.new.tap do |user|
