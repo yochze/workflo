@@ -1,4 +1,4 @@
-# Rails application with devise and omniauth (Github)
+## Rails application with devise and omniauth (Github)
 
 This is a stack of rails application that contains devise (user authentication gem), omniauth (handling oauth with external providers) with github authentication service.
 
