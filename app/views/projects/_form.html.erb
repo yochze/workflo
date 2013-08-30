@@ -1,0 +1,11 @@
+<div class="new-wf-logo">
+	<a href=""><img src="/assets/new-img.png"></a>
+</div>
+
+<%= form_for(@project, :remote => true) do |f| %>
+	<%= f.text_field :title, :class => 'text-new', :placeholder => 'Workflo Title' %>
+	<%= f.text_field :pitch, :class => 'text-new', :placeholder => 'Elevator Pitch' %>
+	<%= f.text_field :introduction, :class => 'text-new', :placeholder => 'Category' %>
+	<br><br><br>
+	<%= f.submit :class => 'btn', :id => 'new-workflo', :data => {:destination => '#new-modules'}, :value => "Start" %> 
+<% end %>

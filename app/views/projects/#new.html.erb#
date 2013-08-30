@@ -1,0 +1,31 @@
+<div id="container">
+	<div class="fullwidth squares">
+		<div class="wrapper top-padding"> <br /	>
+			<div class="title-wrapper">
+			<h2>A New Workflo</h2>
+			<h6>We admire people who share their knowledge</h6>
+			</div>
+
+			<div class="new-wf">
+					<%= render 'form' %>
+			</div>
+			 
+		</div>
+	</div>
+
+<!-- end new workflo -->
+
+
+
+
+
+<script type="text/javascript">
+  
+$(document).ready(function(){
+		$('.fullwidth').height($(window).height());
+            });
+</script>
+
+
+
+</div>

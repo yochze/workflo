@@ -1,0 +1,50 @@
+$(function(){
+
+
+  $('#new-workflo').attr('disabled', 'disabled');
+  
+  /* First Stage */ 
+  var new_modules = "<%= escape_javascript(render(:partial => 'new_modules')) %>";
+  $("#container").append(new_modules);
+  $('.fullwidth').height($(window).height());
+  scrollNext('#new-workflo'); 
+
+  // /* Second Stage */
+  var new_team = "<%= escape_javascript(render(:partial => 'new_team')) %>";
+  $('#goto-team').click(function(){
+    $('#container').append(new_team);
+    $('.fullwidth').height($(window).height());
+    scrollNext('#goto-team');
+    $('#goto-team').off();
+  }); 
+
+
+  var new_module_modal = "<%= escape_javascript(render(:partial => 'sections/new_module_pop')) %>"
+    
+ $('a#new-module-modal').colorbox({
+	html:new_module_modal,
+	transition:"none",
+	speed:800,
+	fadeOut:200,
+	width:450,
+	height:300,
+	fixed:true,	
+	className:'issue-modal'
+ });
+
+
+  
+  /* Scroll */
+
+  function scrollNext(step){
+    var $root = $('html, body');
+    var destination = $(step).data('destination');
+    $root.animate({
+      scrollTop: $(destination).offset().top
+    }, 500, function () {
+      window.location.hash = destination;
+    });
+    return false;
+  }
+
+}); 

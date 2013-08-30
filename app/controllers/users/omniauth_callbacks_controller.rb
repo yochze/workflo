@@ -4,9 +4,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     omniauth = request.env["omniauth.auth"]
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     # Hook into your own authentication system!
-    sign_in_and_redirect @user, :event => :authentication
-    # This would normally be configured to return to the previous path 
-    redirect root_path, :notice => "Welcome, #{@user.name}"  
+    if @user.persisted?
+      sign_in_and_redirect @user, :event => :authentication
+    else
+      redirect_to user_account_edit_path
+    end
   end
 
   # def facebook
@@ -22,15 +24,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #   end
   # end
 
-  def passthru
-    render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
-    # Or alternatively,
-    # raise ActionController::RoutingError.new('Not Found')
-  end
-
   def failure
+    render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
     puts "error"
-    redirect_to root_path
+    # redirect_to root_path
   end
-
+  
 end
