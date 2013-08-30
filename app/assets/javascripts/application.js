@@ -12,7 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require waypoints.min.js
-//= require waypoints-sticky.js
-//= require default.js
-//= require jquery.colorbox.js
+//= require_tree .

@@ -2,37 +2,12 @@
 <html>
 <head>
   <title>Workflo</title>
-  	<link href='http://fonts.googleapis.com/css?family=Open+Sans:200,400,600,700,300' rel='stylesheet' type='text/css'>
-	  <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,800' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-	
-		<nav id="top" class="borderize-light whitescale">
-		<div class="wrapper">
-			<img src="/assets/logo.png" style="margin-top:14px;" >
-
-			<ul class="usericon">
-				<% unless user_signed_in? %>
-					<a href="/users/auth/github">Log In</a>
-				<% else %>
-					<li><div class="tiny-profile-picture"></div></li>
-			</ul>
-				<div class="usermenu">
-					<ul class="personal-menu">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">New Workflo</a></li>
-						<li><a href="#">Settings</a></li>
-						<li><a href="/users/auth/github">Log in</a></li>
-					</ul>
-				</div>
-			<% end %>			
-		</div>
-		</nav>
+  <a href="/users/auth/github">login github</a>
 <%= yield %>
 
 </body>

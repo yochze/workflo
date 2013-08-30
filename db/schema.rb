@@ -11,24 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607170513) do
-
-  create_table "projects", :force => true do |t|
-    t.string   "title"
-    t.string   "sub_title"
-    t.text     "introduction"
-    t.text     "pitch"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  create_table "sections", :force => true do |t|
-    t.text     "title"
-    t.text     "info"
-    t.integer  "project_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130326081035) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130607170513) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "github_uid"
-    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
