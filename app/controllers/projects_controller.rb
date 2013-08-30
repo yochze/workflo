@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
             if @project.save
               # format.html { redirect_to '#new-modules', notice: '' }
               @section = @project.sections.build
+              @member = @project.members.build
               format.js 
             else
               format.html { render action: "new" }

@@ -2,6 +2,7 @@ Workflo::Application.routes.draw do
 
   resources :projects do 
     resources :sections
+    resources :members
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do

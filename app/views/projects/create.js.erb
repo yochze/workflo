@@ -33,6 +33,18 @@ $(function(){
  });
 
 
+var new_member_modal = "<%= escape_javascript(render(:partial => 'members/new_member_pop')) %>"
+
+ $('a#new-member-modal').colorbox({
+  html:new_member_modal,
+  transition:"none",
+  speed:800,
+  fadeOut:200,
+  width:450,
+  height:300,
+  fixed:true, 
+  className:'issue-modal'
+ });
   
   /* Scroll */
 
