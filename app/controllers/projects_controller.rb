@@ -15,11 +15,11 @@ class ProjectsController < ApplicationController
 
 	def create
 	  @project = Project.new(params[:project])
+	  @project.user_id = current_user.id
           respond_to do |format|
             if @project.save
               @section = @project.sections.build
               @member  = @project.members.build
-              @project.add_creator_as_project_member(current_user.id)
               format.js 
             else
               format.html { render action: "new" }

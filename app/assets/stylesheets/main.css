@@ -505,9 +505,9 @@ ul.module-circle li {
 	z-index: 999;
 	background: white;
 	float:left;
-	height:70px;
+	height:75px;
 	border-radius: 150px;
-	border: solid 7px #eee;
+	border: solid 5px #eee;
 	display: inline-block;
 	margin-right: 70px;
 	margin-bottom:45px;
@@ -521,14 +521,26 @@ ul.module-circle li {
 }
 
 .new-module-title {
+	display: block;
 	margin-top:30px;
 	font-size:9pt;
 	text-align: center;
 	font-weight: 600;
 	color:#898989;
+	text-decoration: none;
+}
+
+.new-module-title:hover {
+	color:#333;
+	text-decoration: underline;
+	/*border-bottom: solid 1px #00a7bd; */
 }
 
 ul.module-circle li:last-child, .create { color:#c4c4c4; border-color: #f8f8f8;}
+
+ul.module-circle li:last-child:hover {
+	border-color:#eee;
+}
 
 
 /* New Team */

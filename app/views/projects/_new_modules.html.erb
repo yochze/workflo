@@ -8,19 +8,23 @@
         <h2>Setting up modules</h2>
         <h6>Every project has its stages. What are yours?</h6>
       </div>
+
+      
       <div class="new-modules">
         <ul class="module-circle">
-          <li>
-            <img src="/assets/toolbox-turq.png">
-            <div class="new-module-title">Planning</div>
-          </li>
+  
+        <% @project.sections.each do |project_section| %>
+          <%= render partial: 'sections/new_module_icon', locals: { section: project_section } %>
+        <% end %>
+
+
+
           <li id="create-module" >
             <img src="/assets/toolbox-turq.png">
-            <div class="new-module-title create">New Module</div>
+            <%= link_to 'New Module', '#', id: 'new-module-modal', class: 'new-module-title create' %>
           </li>
         </ul>
 
         
         <br><br><br><br><br><br><br><br><br>
-        <%= link_to 'New Module', '#', :id => 'new-module-modal' %>
         <input type="submit" id="goto-team" data-destination="#new-team" class="btn" value="Next" />	

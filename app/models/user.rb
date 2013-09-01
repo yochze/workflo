@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :projects, through: :members
   has_many :members
 
+  has_many :projects
+
 def self.create_from_omniauth(omniauth)
   User.new.tap do |user|
     user.github_uid = omniauth["uid"]
