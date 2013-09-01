@@ -1,3 +1,22 @@
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+	var new_module_modal = "<%= escape_javascript(render(:partial => 'members/new_member_pop')) %>"
+
+	$('a#new-member-modal').colorbox({
+	  html:new_module_modal,
+	  transition:"none",
+	  speed:800,
+	  fadeOut:200,
+	  width:450,
+	  height:300,
+	  fixed:true, 
+	  className:'issue-modal'
+	 });
+});
+</script>
+
 <a name="new-team" id="new-team">
 <div class="fullwidth grayscale newform">
 	<div class="wrapper top-padding">
@@ -11,8 +30,29 @@
 			<h2>Great project means great team</h2>
 			<h6>Or perhaps you were running solo?</h6>
         </div>
-        <%= render :partial => 'members/new_member_pop' %>
-        <%= link_to 'New member', '#', :id => 'new-member-modal' %>
+
+        <div class="new-team">
+			<ul>
+			 <% @project.users.each do |project_user| %>
+				<li>
+					<div class="single-member">
+							<%= image_tag 'http://y14.io/images/me.png', class: 'member' %>
+							<span class="member-name"><%= project_user.name %></span>
+							<span class="member-role">
+								<%= get_user_role(@project, project_user) %>
+							</span>				
+					</div>
+				</li>
+			<% end %>
+			<li>
+				<div class="single-member">
+					<%= link_to image_tag('new_member.png'), '#', id: 'new-member-modal' %>
+						<span class="member-name-label">Name..</span>
+						<span class="member-role-label">Role..</span>				
+				</div>	
+			</li>
+		</ul>
+   
 	 
 	</div>
 </div>

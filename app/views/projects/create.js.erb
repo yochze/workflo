@@ -1,5 +1,16 @@
-$(function(){
+$(document).ready(function(){
 
+
+  function scrollNext(step){
+    var $root = $('html, body');
+    var destination = $(step).data('destination');
+    $root.animate({
+      scrollTop: $(destination).offset().top
+    }, 500, function () {
+      window.location.hash = destination;
+    });
+    return false;
+  }
 
   $('#new-workflo').attr('disabled', 'disabled');
   
@@ -33,30 +44,7 @@ $(function(){
  });
 
 
-var new_member_modal = "<%= escape_javascript(render(:partial => 'members/new_member_pop')) %>"
-
- $('a#new-member-modal').colorbox({
-  html:new_member_modal,
-  transition:"none",
-  speed:800,
-  fadeOut:200,
-  width:450,
-  height:300,
-  fixed:true, 
-  className:'issue-modal'
- });
-  
   /* Scroll */
 
-  function scrollNext(step){
-    var $root = $('html, body');
-    var destination = $(step).data('destination');
-    $root.animate({
-      scrollTop: $(destination).offset().top
-    }, 500, function () {
-      window.location.hash = destination;
-    });
-    return false;
-  }
 
 }); 

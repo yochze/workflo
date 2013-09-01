@@ -307,7 +307,7 @@ ul#team li {
 	border-radius: 150px; 
 	border: solid 3px #eee;
 	display: inline-block;
-	background: url('http://y14.io/images/me.png');
+	/*background: url('http://y14.io/images/me.png');*/
 	background-position: center;}
 
 section#section { 
@@ -530,6 +530,73 @@ ul.module-circle li {
 
 ul.module-circle li:last-child, .create { color:#c4c4c4; border-color: #f8f8f8;}
 
+
+/* New Team */
+
+.new-team {
+	width: 700px;
+	margin:0 auto;
+	margin-top:43px;
+}
+
+.new-team ul {
+	list-style-type: none;
+	width: 100%;
+	margin:0;
+	padding:0;
+	/*text-align: center; */}
+
+.new-team ul li {
+	display: inline-block;
+	margin:23px; }
+
+.member {
+	width:80px;
+	height:80px;
+	border-radius: 150px; 
+	border: solid 3px #eee;
+	display: inline;
+
+}
+
+
+
+.member-name, .member-name-label {
+    margin-top:5px; 
+    display: block;
+	font-weight: 600;
+	color:#898989;
+    text-align: center;
+}
+
+.member-role {
+	display: block;
+	font-size:8pt;
+	font-style: italic;
+	text-align: center;
+} 
+
+.member-role-label, .member-name-label {
+	color:#eee; }
+
+
+.single-member {
+	display: inline;
+	width: 230px;
+}
+
+.single-member-left {
+	display: inline-block;
+	float:left;
+	min-width: 90px;
+}
+
+.single-member-right {
+	display: block;
+	float:left;
+	margin-left:14px;
+	vertical-align: middle;
+}
 
 /* Profile Page */
 

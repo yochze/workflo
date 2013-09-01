@@ -17,9 +17,9 @@ class ProjectsController < ApplicationController
 	  @project = Project.new(params[:project])
           respond_to do |format|
             if @project.save
-              # format.html { redirect_to '#new-modules', notice: '' }
               @section = @project.sections.build
-              @member = @project.members.build
+              @member  = @project.members.build
+              @project.add_creator_as_project_member(current_user.id)
               format.js 
             else
               format.html { render action: "new" }

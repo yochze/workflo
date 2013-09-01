@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130830104408) do
+ActiveRecord::Schema.define(version: 20130901102614) do
 
   create_table "members", force: true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
     t.text     "role"
-    t.integer  "security_level"
+    t.integer  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
