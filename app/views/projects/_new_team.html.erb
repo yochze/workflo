@@ -1,3 +1,5 @@
+
+
 <script type="text/javascript">
 
 	$(document).ready(function(){
@@ -32,17 +34,11 @@
         </div>
 
         <div class="new-team">
-			<ul>
-			 <% @project.users.each do |project_user| %>
-				<li>
-					<div class="single-member">
-							<%= image_tag 'http://y14.io/images/me.png', class: 'member' %>
-							<span class="member-name"><%= project_user.name %></span>
-							<span class="member-role">
-								<%= get_user_role(@project, project_user) %>
-							</span>				
-					</div>
-				</li>
+			<ul id="team-circle">
+			 <% @project.members.each do |project_member| %>
+			 	<% unless project_member.user.nil? %>
+					<%= render :partial => 'members/new_member_icon', :locals => { :project_member => project_member, :project => @project } %>
+				<% end %>
 			<% end %>
 			<li>
 				<div class="single-member">
@@ -51,8 +47,11 @@
 						<span class="member-role-label">Role..</span>				
 				</div>	
 			</li>
+
 		</ul>
-   
-	 
+		<br /> <br />
+		<div class="center-btn">
+			<%= button_to 'Continue', project_path(@project), class: 'btn center-btn bright', method: :get %>
+		</div>
 	</div>
 </div>

@@ -1,7 +1,6 @@
 $(document).ready(function(){
-  var new_member = "<%= escape_javascript(render :partial => 'new_module_icon', :locals => { :section => @section }) %>"
-  $('ul.module-circle li:last').before(new_module);
-
+  var new_member = "<%= escape_javascript(render :partial => 'new_member_icon', :locals => { :project_member => @member, :project => @project }) %>"
+  $('ul#team-circle li:last').before(new_member);
 	$('a#new-member-modal').colorbox({
 	  html:"<b>asdf</b>",
 	  transition:"none",

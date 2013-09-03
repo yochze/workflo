@@ -1,6 +1,11 @@
 class Project < ActiveRecord::Base
   attr_accessible :introduction, :pitch, :sub_title, :title, :user_id
 
+  # Validations
+  # Later.
+
+
+  # Associations
 
   has_many :sections, :dependent => :destroy
 
@@ -10,6 +15,9 @@ class Project < ActiveRecord::Base
   belongs_to :user
   
   accepts_nested_attributes_for :sections
+
+
+  # Actions
 
   after_create :add_creator_as_project_member
   after_create :add_initial_section

@@ -9,12 +9,14 @@
         <h6>Every project has its stages. What are yours?</h6>
       </div>
 
-      
+
       <div class="new-modules">
         <ul class="module-circle">
   
         <% @project.sections.each do |project_section| %>
+        <% unless project_section.title.nil? %>
           <%= render partial: 'sections/new_module_icon', locals: { section: project_section } %>
+          <% end %>
         <% end %>
 
 

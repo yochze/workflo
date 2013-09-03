@@ -72,7 +72,7 @@ header {
 	.whitescale { background: #fff; }
 	.leftborder { border-left: solid 3px #c4c4c4;}
 	.pos-relative { position: relative; }
-
+	.center-btn { text-align: center; }
 nav img { margin-top: 7px; float:left; display: inline; position: relative; }
 
 nav#top { 
@@ -476,6 +476,11 @@ article h1 {
 	outline: 0;
 	border:0;
 }
+
+.bright {
+	background-color: #00a7bd;
+}
+
 .btn:hover {
 	color:#fff;
 	background-color: #5c7699; }

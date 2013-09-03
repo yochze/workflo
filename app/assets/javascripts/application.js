@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui.js
 //= require waypoints.min.js
 //= require waypoints-sticky.js
 //= require default.js
