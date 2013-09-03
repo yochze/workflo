@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	
+	<%= yield :project_header %>
 		<nav id="top" class="borderize-light whitescale">
 		<div class="wrapper">
 			<img src="/assets/logo.png" style="margin-top:14px;" >
@@ -32,6 +32,7 @@
 				</div>
 			<% end %>			
 		</div>
+
 		</nav>
 <%= yield %>
 

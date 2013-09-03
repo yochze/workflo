@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
 	end
 	
 	def show
-		
+		@project  = Project.find(params[:id])
+		@sections = @project.sections
+		@members  = @project.members
 	end
 
 	def create
