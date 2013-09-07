@@ -594,7 +594,8 @@ ul.module-circle li:last-child:hover {
 } 
 
 .member-role-label, .member-name-label {
-	color:#eee; }
+	color:#888;
+        cursor: pointer; }
 
 
 .single-member {
@@ -667,7 +668,33 @@ figcaption {
 	margin-top:-21px;
 	padding-top:-21px; }
 
+/* New Module Modal */
+
+.modal-wrapper {
+  padding-top:23px;
+  padding-left:10px;
+}
+
+.label-input {
+  font-style: italic;
+  font-family: 'Noto Serif', Serif;
+  font-size:12pt;
+  color:#d5d5d5;
+  display:block;
+}
+
+.label-input:hover {
+  color:#888;
+  cursor:pointer;
+}
+
+.new-module-wrapper {
+  margin:0 auto;
+  width:80%;
+}
 
 
-
-
+.new-module-wrapper img {
+  display:block;
+  margin:0 auto;
+}

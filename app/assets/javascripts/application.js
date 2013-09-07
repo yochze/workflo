@@ -17,3 +17,4 @@
 //= require waypoints-sticky.js
 //= require default.js
 //= require jquery.colorbox.js
+//= require jquery.tokeninput.js

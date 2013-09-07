@@ -2,56 +2,80 @@
 
 <script type="text/javascript">
 
-	$(document).ready(function(){
+  $(document).ready(function(){
 
-	var new_module_modal = "<%= escape_javascript(render(:partial => 'members/new_member_pop')) %>"
+      var new_module_modal = "<%= escape_javascript(render(:partial => 'members/new_member_pop')) %>"
 
-	$('a#new-member-modal').colorbox({
-	  html:new_module_modal,
-	  transition:"none",
-	  speed:800,
-	  fadeOut:200,
-	  width:450,
-	  height:300,
-	  fixed:true, 
-	  className:'issue-modal'
-	 });
+      $('a#new-member-modal').colorbox({
+html:new_module_modal,
+transition:"none",
+speed:800,
+fadeOut:200,
+width:450,
+height:300,
+fixed:true, 
+className:'issue-modal'
 });
-</script>
+      });
+    </script>
 
-<a name="new-team" id="new-team">
-<div class="fullwidth grayscale newform">
-	<div class="wrapper top-padding">
-	<br /	>
-	<figure>
-		<img src="/assets/celtics.jpg" >
-		<figcaption>Boston Celtics 1965/6 team</figcaption>
-	</figure>
-	 <br><br>
-		<div class="title-wrapper">
-			<h2>Great project means great team</h2>
-			<h6>Or perhaps you were running solo?</h6>
-        </div>
 
-        <div class="new-team">
-			<ul id="team-circle">
-			 <% @project.members.each do |project_member| %>
-			 	<% unless project_member.user.nil? %>
-					<%= render :partial => 'members/new_member_icon', :locals => { :project_member => project_member, :project => @project } %>
-				<% end %>
-			<% end %>
-			<li>
-				<div class="single-member">
-					<%= link_to image_tag('new_member.png'), '#', id: 'new-member-modal' %>
-						<span class="member-name-label">Name..</span>
-						<span class="member-role-label">Role..</span>				
-				</div>	
-			</li>
 
-		</ul>
-		<br /> <br />
-		<div class="center-btn">
-			<%= button_to 'Continue', project_path(@project), class: 'btn center-btn bright', method: :get %>
-		</div>
-	</div>
-</div>
+    <a name="new-team" id="new-team">
+      <div class="fullwidth grayscale newform">
+        <div class="wrapper top-padding">
+          <br /	>
+          <figure>
+          <img src="/assets/celtics.jpg" >
+          <figcaption>Boston Celtics 1965/6 team</figcaption>
+          </figure>
+          <br><br>
+          <div class="title-wrapper">
+            <h2>Great project means great team</h2>
+            <h6>Or perhaps you were running solo?</h6>
+          </div>
+
+          <div class="new-team">
+            <ul id="team-circle">
+              <% @project.members.each do |project_member| %>
+                <% unless project_member.user.nil? %>
+                  <%= render :partial => 'members/new_member_icon', :locals => { :project_member => project_member, :project => @project } %>
+                <% end %>
+              <% end %>
+              <li>
+              <div class="single-member">
+                <%= form_for [@project, @member], :remote => true do |builder| %>
+                  <script type="text/javascript">
+
+                    $(document).ready(function(){
+
+                        $('#member_user_id').tokenInput('/users/list_json.json', {
+crossDomain: false,
+theme: "facebook"
+                          });
+
+                        $('.member-name-label').click(function(e){
+                          e.preventDefault();
+                          $(this).hide();
+                          // $(this).before('<%= j builder.text_field :user_id %>');
+                
+                          });
+                        });
+                      </script>
+                      <%= link_to image_tag('new_member.png'), '#', id: 'new-member-modal' %>
+                      <span class="member-name-label">Name..</span>
+                      <span class="member-role-label">Role..</span>				
+                      <%= builder.text_field :user_id %>
+                      <br />
+                      <%= builder.submit %>
+                    <% end %>
+                  </div>	
+                  </li>
+
+                </ul>
+                <br /> <br />
+                <div class="center-btn">
+                  <%= button_to 'Continue', project_path(@project), class: 'btn center-btn bright', method: :get %>
+                </div>
+              </div>
+            </div>

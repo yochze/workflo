@@ -1,8 +1,25 @@
-<div>
-  <h1> New Module </h1>
-   <%= form_for [@project, @section], :remote => true do |builder| %>
-          <%= builder.text_field :title %>
-          <%= builder.text_field :info %>
-          <%= builder.submit %>
+
+
+<div class="modal-wrapper center">
+  <div class="new-module-wrapper">
+
+    <%= form_for [@project, @section], :remote => true do |builder| %>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#name').click(function(){
+          $(this).hide();
+          $(this).before('<%= j builder.text_field :title %>');
+          });
+ $('#info').click(function(){
+          $(this).hide();
+          $(this).before('<%= j builder.text_field :info %>');
+        });
+      });
+</script>
+    <img src="/assets/toolbox-turq.png"><Br />
+    <span id="name" class="label-input center-btn">Module Name..</span><br />
+    <span id="info" class="label-input">Some explanation..</span>
+    <%= builder.submit "Add", :id => 'submit-section' %>
    <% end %>  
+  </div>
 </div>

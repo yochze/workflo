@@ -13,6 +13,10 @@ Workflo::Application.routes.draw do
   
   get '/account/edit' => 'account#edit', :as => :user_account_edit
 
+  scope :format => true, :constraints => { :format => 'json' } do
+    get '/users/list_json' => "users#index_with_json"
+  end
+
 
   # devise_for :users
 
