@@ -2,13 +2,10 @@
 
 <div class="modal-wrapper center">
   <div class="new-module-wrapper">
-
     <%= form_for [@project, @section], :remote => true do |builder| %>
     <img src="/assets/toolbox-turq.png"><Br />
-    <!-- <span id="name" class="label-input center-btn">Module Name..</span><br /> -->
-    <%= builder.text_field :title %>
-    <!-- <span id="info" class="label-input">Some explanation..</span> -->
-    <%= builder.text_field :info %> %>
+    <span id="name" class="label-input center-btn">Module Name..</span><br />
+    <span id="info" class="label-input">Some explanation..</span>
     <%= builder.submit "Add", :id => 'submit-section' %>
    <% end %>  
   </div>

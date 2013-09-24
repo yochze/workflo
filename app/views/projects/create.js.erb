@@ -48,6 +48,21 @@ $(document).ready(function(){
 	className:'issue-modal'
  });
 
+var edit_module_modal = "<%= escape_javascript(render(:partial => 'sections/edit_module_pop')) %>"
+
+$('a#edit-module-modal').colorbox({
+  html:edit_module_modal,
+  transition:"none",
+  speed:800,
+  fadeOut:200,
+  width:450,
+  height:300,
+  fixed:true, 
+  className:'issue-modal'
+ });
+
+
+
 
   /* Scroll */
 

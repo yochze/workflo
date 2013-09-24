@@ -9,6 +9,11 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
+  <script type="text/javascript">
+		  $(document).ready(function() {
+		  $('#sidr-plugin').sidr();
+		});
+  </script>
 </head>
 <body>
 	<%= yield :project_header %>
@@ -20,8 +25,16 @@
 				<% unless user_signed_in? %>
 					<a href="/users/auth/github">Log In</a>
 				<% else %>
-					<li><div class="tiny-profile-picture"></div></li>
+					<li><a id="sidr-plugin" href="#usermenu"><div class="tiny-profile-picture"></div></a></li>
 			</ul>
+
+<!-- <div id="sidr">
+  <ul>
+    <li><a href="#">List 1</a></li>
+    <li class="active"><a href="#">List 2</a></li>
+    <li><a href="#">List 3</a></li>
+  </ul>
+</div> -->
 				<div class="usermenu">
 					<ul class="personal-menu">
 						<li><a href="#">Home</a></li>

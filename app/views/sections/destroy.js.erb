@@ -1,0 +1,5 @@
+$(document).ready(function(){
+	var current	= <%= @section.id %>;
+	// $("ul.module-circle").find("[data-section_id='" + current + "']");
+	$('li#section-<%= @section.id %>').remove();
+});

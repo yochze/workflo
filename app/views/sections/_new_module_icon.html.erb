@@ -1,4 +1,5 @@
-<li data-section_id="<%= section.id %>">
+<li id="section-<%= section.id %>">
   <img src="/assets/toolbox-turq.png">
   <div class="new-module-title"><%= section.title %> </div>
+  <%= button_to 'X', project_section_path(project, section), :confirm => "are you sure?", :remote => true, :method => :delete %>
 </li>

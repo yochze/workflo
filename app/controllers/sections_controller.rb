@@ -14,4 +14,15 @@ class SectionsController < ApplicationController
       end
     end     
   end
+
+def destroy
+  @project = Project.find(params[:project_id])
+  @section = @project.sections.find(params[:id])
+  @section.destroy
+  respond_to do |format| 
+    # format.html
+    format.js 
+  end
+end
+
 end

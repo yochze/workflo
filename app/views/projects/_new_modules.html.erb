@@ -17,17 +17,17 @@
   
         <% @project.sections.each do |project_section| %>
         <% unless project_section.title.nil? %>
-          <%= render partial: 'sections/new_module_icon', locals: { section: project_section } %>
+          <%= render partial: 'sections/new_module_icon', locals: { section: project_section, project: @project } %>
           <% end %>
         <% end %>
 
 
-
-        <li id="create-module" >
-              <img src="/assets/toolbox-turq.png">
+<a href="#" id="new-module-modal">
+  <li id="create-module"> 
+            <%= image_tag('toolbox-turq.png') %>
             <%= link_to 'New Module', '#', id: 'new-module-modal', class: 'new-module-title create' %>
-          </li>
-        </ul>
+          </li></a>
+  </ul>
 
         
         <br><br><br><br><br><br><br><br><br>

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var new_module = "<%= escape_javascript(render :partial => 'new_module_icon', :locals => { :section => @section }) %>"
+  var new_module = "<%= escape_javascript(render :partial => 'new_module_icon', :locals => { :section => @section, :project => @project }) %>"
   $('ul.module-circle li:last').before(new_module);
         parent.jQuery.colorbox.close();        
 

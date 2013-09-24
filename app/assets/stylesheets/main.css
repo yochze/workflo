@@ -518,6 +518,7 @@ ul.module-circle li {
 	margin-bottom:45px;
 }
 
+
 .new-modules img {
 	display: block;
 	margin:0 auto;
@@ -547,6 +548,9 @@ ul.module-circle li:last-child:hover {
 	border-color:#eee;
 }
 
+li#create-module img { border:0; outline: 0;}
+
+.cboxElement { outline:0;} 
 
 /* New Team */
 

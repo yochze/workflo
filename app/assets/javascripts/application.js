@@ -18,3 +18,4 @@
 //= require default.js
 //= require jquery.colorbox.js
 //= require jquery.tokeninput.js
+//= require jquery.sidr.min.js
